@@ -18,6 +18,7 @@ app.on('ready', ()=>{
             center: true, // coloca la ventana en el centro de la pantalla
             maximizable: false, // deshabilita la opcion de maximizar la ventana
             backgroundColor: '#2e2c29', // coloca un color de fondo
+            titleBarStyle: hidden,
         }
     )
     window.on('closed',() =>{
