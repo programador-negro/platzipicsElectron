@@ -18,10 +18,20 @@ app.on('ready', ()=>{
             center: true, // coloca la ventana en el centro de la pantalla
             maximizable: false, // deshabilita la opcion de maximizar la ventana
             backgroundColor: '#2e2c29', // coloca un color de fondo
-            titleBarStyle: hidden,
+
+
         }
     )
+
+    // evento para cuando se mueva la ventana
+    window.on('move', ()=>{
+        const position = window.getPosition()
+        console.log(`La posicion de la ventana es: ${position}`)
+    })
+
+    // evento para cuando se cierre la ventana
     window.on('closed',() =>{
+        console.log("Cerro la ventana...")
         window = null
         app.quit() // Cierra la aplicacion
     })
