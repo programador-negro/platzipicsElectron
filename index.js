@@ -1,5 +1,7 @@
 'use strict'
 
+// Aplicacion de  documentacion de muchas tecnologias de desarollo de software
+
 const {app, BrowserWindow, BrowserWindowProxy} = require('electron')
 
 // console.dir(app)
@@ -21,24 +23,25 @@ app.on('ready', ()=>{
 
         }
     )
-    // evento que se ejecuta cuando la ventana principal se ha terminado de cargar
-    window.once('ready-to-show', () => {
-        window.show()
-    })
-    window.loadURL('http://devdocs.io/')
-
+    
     // evento para cuando se mueva la ventana
     window.on('move', ()=>{
         const position = window.getPosition()
         console.log(`La posicion de la ventana es: ${position}`)
     })
-
+    
     // evento para cuando se cierre la ventana
     window.on('closed',() =>{
         console.log("Cerro la ventana...")
         window = null
         app.quit() // Cierra la aplicacion
     })
+    
+    // evento que se ejecuta cuando la ventana principal se ha terminado de cargar
+    window.once('ready-to-show', () => {
+        window.show()
+    })
+    window.loadURL('http://devdocs.io/')
 
 })
 
