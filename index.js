@@ -16,12 +16,16 @@ app.on('ready', ()=>{
             height: 600,
             title: 'Hola Tu', // coloca un titulo a la ventana
             center: true, // coloca la ventana en el centro de la pantalla
-            maximizable: false, // deshabilita la opcion de maximizar la ventana
             backgroundColor: '#2e2c29', // coloca un color de fondo
-
+            show: false, // hace que la ventana se oculte o sea invisible
 
         }
     )
+    // evento que se ejecuta cuando la ventana principal se ha terminado de cargar
+    window.once('ready-to-show', () => {
+        window.show()
+    })
+    window.loadURL('http://devdocs.io/')
 
     // evento para cuando se mueva la ventana
     window.on('move', ()=>{
